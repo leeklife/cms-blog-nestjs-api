@@ -15,9 +15,9 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://127.0.0.1:8080/',
-      'http://localhost:4200',
-      'https://cmsblog-frontend.azurewebsites.net',
-    ],
+      'http://localhost:4400',
+      'http://localhost:4500',
+],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
     credentials: true,
   });
@@ -31,7 +31,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/', app, document);
 
-  await app.listen(5000);
+  await app.listen(5100);
 }
 
 bootstrap().then();
